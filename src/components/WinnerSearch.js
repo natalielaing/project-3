@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 import '../App.css';
 
 const WinnerSearch = (props) => {
-    // const [queen, setQueen] = useState ([]);
+
     const [queenChoice, setQueenChoice] = useState('');
     const [queenSearch, setQueenSearch] = useState ('');
 
@@ -23,18 +23,32 @@ const WinnerSearch = (props) => {
       }
 
     useEffect( () => {
+
+        const random = Math.floor(Math.random() * 154);
         if (queenSearch && queenSearch != "placeholder") {
-            axios({
-                baseURL: "http://www.nokeynoshade.party/api/queens",
-                method: "GET",
-                params: {
-                name: queenSearch,
-                limit: 1
-                }
-              }).then((apiData) => {
-              props.setQueen(apiData.data)
-            })
-                }
+            axios.all([
+                axios({
+                    baseURL: "http://www.nokeynoshade.party/api/queens",
+                    method: "GET",
+                    params: {
+                    name: queenSearch,
+                    limit: 1
+                    }}),
+                axios({
+                        baseURL: "http://makeup-api.herokuapp.com/api/v1/products.json",
+                        method: "GET",
+                        params: {
+                        product_type: "lipstick",
+                        limit: 1
+                        }})
+
+            ])
+            .then(axios.spread((queenData, makeupData) => {
+                props.setQueen(queenData.data);
+                props.setLipstick(makeupData.data[random]);
+                console.log(makeupData.data)
+            }))
+        }
               }, [queenSearch]);
         
 
@@ -69,10 +83,7 @@ const WinnerSearch = (props) => {
                 </form>
             </div>
         </section>
-
-
-
     )
 }
 
-export default WinnerSearch 
+export default WinnerSearch

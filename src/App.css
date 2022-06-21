@@ -13,8 +13,13 @@ html {
   font-size: 125%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .main {
-  background-image: linear-gradient(violet, pink)
+  background-image: linear-gradient(violet, pink);
+  min-height: 170vh;
 }
 
 .wrapper {
@@ -28,56 +33,71 @@ h1 {
   font-family: 'Racing Sans One', cursive;
   letter-spacing: 3px;
   color: rgba(255, 0, 255, 0.842);
-  text-shadow: 6px 6px 5px #DDEB2B;
+  text-shadow: 6px 6px 5px yellow;
   text-align: center;
-  margin: 0;
-  border-bottom: dotted 1rem #65FAA2;
+  margin: auto;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: 'Bebas Neue', serif;
   margin: 0;
   letter-spacing: 3px;
-  color: #65FAA2;
-  text-shadow: 3px 3px grey;
+  color: black;
   text-align: center;
   padding-top: 50px;
 }
 
-h3 {
-  color: #65FAA2;
-  font-size: 1.5rem;
-  margin-top: 20px;
-  margin-bottom: 0;
-  font-family: 'Bebas Neue', serif;
-  letter-spacing: 3px;
-  text-align: center;
-  text-shadow: 3px 3px grey;
+h2 span {
+  /* color: #65FAA2; */
+  color: magenta;
+  border: dotted yellow 2px;
+}
+
+.flexTitle {
+  display: flex;
+  border-bottom: dotted 1rem yellow;
+}
+
+.ruContainer {
+  width: 550px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.ruContainer img {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .imgContainer {
   width: 400px;
-  height: 500px;
+  height: 450px;
 }
 
 img {
   width: 100%;
   height: 100%;
-  border-radius: 20%;
+  border-radius: 10%;
+  border: black solid 2px;
 }
 
 .queen {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .queen p{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Bebas Neue', serif;
-  text-shadow:#65FAA2 1px 1px;
-  padding: 50px;
+  /* text-shadow:#65FAA2 1px 1px; */
+  padding: 30px;
+  padding-top: 0px;
   position: relative;
+  text-align: center;
 }
 
 .queen p:before {
@@ -85,8 +105,8 @@ img {
   position: absolute;
   font-size: 5rem;
   line-height: 1;
-  top: 0;
-  left: 0;
+  top: -30px;
+  left: -30px;
   content: "\201C";
 }
 
@@ -96,14 +116,67 @@ img {
   float:right;
   font-size:5rem;
   line-height: 1;
-  right:0;
-  bottom:-0.5em;
+  right:-30px;
+  bottom:-60px;
   content: "\201D";
 }
 
 .queen h3 {
   color: magenta;
   text-shadow: 1px 1px black;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.queen h4 {
+  color: black;
+  font-size: 1rem;
+  text-shadow: none;
+  margin: 0 auto;
+}
+
+.queenRight {
+  width: 50%;
+}
+
+.queenRight h4 {
+  border: none;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 0.5;
+  padding: 0;
+}
+
+.queenRight h5 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 1.5rem;
+  color: yellow;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  width: 50%;
+  height:fit-content;
+  margin: auto 0;
+}
+
+.makeupResult {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  margin: 30px auto;
+  border: dotted black 2px;
+  padding: 10px;
+}
+
+.makeupResult:hover {
+  cursor: pointer;
+  background: magenta;
+}
+
+.makeupImage {
+  width: 30%;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .flexContainer {
@@ -114,13 +187,19 @@ img {
 h4 {
   font-size: 1.5rem;
   font-family: 'Bebas Neue', serif;
-  margin: 0;
+  margin: 0 auto;
   letter-spacing: 3px;
-  color: #DDEB2B;
-  text-shadow: 3px 3px grey;
+  color: yellow;
+  border-bottom: black dotted 2px;
+  text-shadow: 1px 1px black;
   text-align: center;
   padding-top: 50px;
   width: max-content;
+}
+
+form {
+  display: flex;
+  margin: auto;
 }
 
 button {
@@ -132,8 +211,12 @@ cursor: pointer;
 color: black;
 padding: .75rem 1.65rem;
 transform: rotate(-2deg);
-margin: 60px 60px;
+margin: 50px 20px;
+text-align: center;
+}
 
+.randomSearch button {
+  margin: 70px 70px;
 }
 
 button::after {
@@ -153,6 +236,8 @@ button:hover:after {
 
 .or h4 {
   font-size: 5rem;
+  color: #65FAA2;
+  border: none;
 }
 
 select {
@@ -160,6 +245,6 @@ select {
   color: black;
   font-family: 'Bebas Neue';
   border: dotted black 2px;
-  margin: 0 auto;
-  display: flex;
+  height: 50px;
+  margin: auto;
 }

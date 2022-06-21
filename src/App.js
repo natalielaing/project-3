@@ -2,7 +2,8 @@ import './App.css';
 import {useState} from "react";
 import WinnerSearch from "./components/WinnerSearch";
 import RandomSearch from "./components/RandomSearch";
-import DisplayResults from "./components/DisplayResults";
+import DisplayWinner from "./components/DisplayWinner";
+import DisplayRandom from './components/DisplayRandom';
 
 
 function App() {
@@ -10,22 +11,21 @@ function App() {
   const [queen, setQueen] = useState ([]);
   const [randomQueen, setRandomQueen] = useState([]);
   const [buttonClick, setButtonClick] = useState(false);
-  // const [queenChoice, setQueenChoice] = useState('');
-
-  // const handleSubmit = function(event, selectedQueen) {
-  //   event.preventDefault();
-  //   // clearRandom();
-  //   setQueenChoice(selectedQueen);
-  // }
-
+  const [lipstick, setLipstick] = useState([]);
 
 
   return (
     <div className="main">
       <div className="wrapper">
-        <h2>Looking for some inspiration?</h2>
-        <h3>Prepare to be...</h3>
-        <h1>Yassified</h1>
+        <header>
+        <div className="flexTitle">
+            <div className="ruContainer">
+                  <img src={require('./assets/rupaul1.png')}  alt={'photo of rupaul'}/>
+            </div>
+            <h1>Yassified</h1>
+        </div>
+        <h2><span>Yass</span>ify yourself with the help of a Queen!</h2>
+        </header>
         <div className="flexContainer">
             <div className="winnerSearch">
               <WinnerSearch
@@ -35,6 +35,8 @@ function App() {
               setRandomQueen={setRandomQueen}
               buttonClick={buttonClick}
               setButtonClick={setButtonClick}
+              lipstick={lipstick}
+              setLipstick={setLipstick}
               />
             </div>
             <div className="or">
@@ -48,15 +50,23 @@ function App() {
               setRandomQueen={setRandomQueen}
               buttonClick={buttonClick}
               setButtonClick={setButtonClick}
+              lipstick={lipstick}
+              setLipstick={setLipstick}
               />
               </div>
           </div>
-        <DisplayResults
+        <DisplayWinner
         queen={queen}
         randomQueen={randomQueen}
         buttonClick={buttonClick}
+        lipstick={lipstick}
         />
-        {/* <Makeup/> */}
+        <DisplayRandom
+        queen={queen}
+        randomQueen={randomQueen}
+        buttonClick={buttonClick}
+        lipstick={lipstick}
+        />
       </div>
     </div>
   );
