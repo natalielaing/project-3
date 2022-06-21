@@ -91,13 +91,15 @@ img {
 }
 
 .queen p{
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: 'Bebas Neue', serif;
-  /* text-shadow:#65FAA2 1px 1px; */
   padding: 30px;
   padding-top: 0px;
   position: relative;
   text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  width: auto;
 }
 
 .queen p:before {
@@ -146,6 +148,8 @@ img {
   font-size: 1rem;
   letter-spacing: 0.5;
   padding: 0;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .queenRight h5 {
@@ -174,8 +178,8 @@ img {
 }
 
 .makeupImage {
-  width: 30%;
-  height: 200px;
+  width: 35%;
+  height: 35%;
   margin: 0 auto;
 }
 
@@ -247,4 +251,151 @@ select {
   border: dotted black 2px;
   height: 50px;
   margin: auto;
+  cursor: pointer;
+}
+
+select:hover {
+  background: yellow;
+}
+
+
+/* mediaqueries */
+
+
+@media (max-width: 1350px) {
+  .ruContainer {
+    width: 300px;
+    height: 200px;
+  }
+
+}
+
+@media (max-width: 1100px) {
+  .flexTitle {
+    display:block;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  .or h4 {
+    font-size: 2rem;
+    margin-top: 100px;
+  }
+
+  button {
+    width: 150px;
+    font-size: 1rem;
+  }
+
+  .randomSearch button {
+    margin: 50px 120px;
+  }
+
+  .queenRight p {
+    font-size: 1.5rem;
+  }
+
+  .queenRight p::before {
+    font-size: 3rem;
+    top: 0;
+    left: 0;
+  }
+
+  .queenRight p::after {
+    font-size: 3rem;
+    bottom: 0;
+    right: 0;
+  }
+
+  .imgContainer {
+    height: 400px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .flexContainer {
+    display: block;
+  }
+
+  form {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  select {
+    margin: 20px auto;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  button {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .or h4 {
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .randomSearch h4 {
+    padding-top: 20px;
+  }
+
+  .randomButton {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .queen {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .imgContainer {
+    margin: 0 auto;
+  }
+
+  .queenRight {
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+
+}
+
+@media (max-width: 680px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h4 {
+    width: auto;
+  }
+
+  .makeupImage {
+    margin: auto;
+    width: 50%; 
+    height: 50%;
+  }
+
+  .makeupResult {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .queenRight p::before {
+    display: none;
+  }
+
+  .queenRight p::after {
+    display: none;
+  }
+
 }

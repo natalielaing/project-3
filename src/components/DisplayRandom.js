@@ -16,7 +16,10 @@ function DisplayRandom (props) {
                     {props.buttonClick && <p>{props.randomQueen.quote}</p>}
                     {props.buttonClick && <h3>{`-${props.randomQueen.name}`}</h3>}
 
-                    {props.buttonClick && <h4>{`Wanna feel better? ${props.randomQueen.name} suggests trying:`}</h4>}
+                    <div className="makeupIntro">
+                    {props.buttonClick && <h4>You wanna feel better?</h4>}
+                    {props.buttonClick && <h4>{`${props.randomQueen.name} suggests trying:`}</h4>}
+                    </div>
 
                 <a className="makeupResult" href={props.lipstick.product_link}>
                     {props.buttonClick && <h5>{`${props.lipstick.name} by ${props.lipstick.brand}`}</h5>}

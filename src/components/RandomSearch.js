@@ -44,7 +44,9 @@ const RandomSearch = (props) => {
       return (
           <div className="randomSearch">
               <h4>Any inspiration is good for me:</h4>
+              <div className="randomButton">
               <button onClick={()=> {getQueen()}}>Any Queen Will Do...</button>
+              </div>
           </div>
       )
 
