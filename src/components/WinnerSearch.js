@@ -1,44 +1,50 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
+import '../App.css';
 
 const WinnerSearch = (props) => {
-    const [queen, setQueen] = useState ([]);
+    // const [queen, setQueen] = useState ([]);
     const [queenChoice, setQueenChoice] = useState('');
     const [queenSearch, setQueenSearch] = useState ('');
 
-
-    useEffect( () => {
-        if (queenChoice && queenChoice != "placeholder") {
-            axios({
-                baseURL: "http://www.nokeynoshade.party/api/queens",
-                method: "GET",
-                params: {
-                name: queenChoice,
-                limit: 1
-                }
-              }).then((apiData) => {
-              setQueen(apiData.data)
-            })
-                }
-              }, [queenChoice]);
-        
     const handleChange = (event) => {
-        setQueenSearch(event.target.value);
+        setQueenChoice(event.target.value);
+    }
+
+    const clearRandom = function () {
+        props.setRandomQueen([]);
+        props.setButtonClick((false))
     }
 
     const handleSubmit = function(event, selectedQueen) {
         event.preventDefault();
-        setQueenChoice(selectedQueen);
+        setQueenSearch(selectedQueen);
+        clearRandom();
       }
 
+    useEffect( () => {
+        if (queenSearch && queenSearch != "placeholder") {
+            axios({
+                baseURL: "http://www.nokeynoshade.party/api/queens",
+                method: "GET",
+                params: {
+                name: queenSearch,
+                limit: 1
+                }
+              }).then((apiData) => {
+              props.setQueen(apiData.data)
+            })
+                }
+              }, [queenSearch]);
+        
 
     return (
         <section>
             <div className="wrapper">
-                <form onSubmit={(event) => {
-                    handleSubmit(event, queenSearch)
-                }}>
-                    <select onChange={handleChange} name="queen" id="chosenQueen" value= {queenChoice}>
+                <h4>I need some winning inspiration:</h4>
+                <form onSubmit={(event, selectedQueen) => {
+                    handleSubmit(event, queenChoice)}}>
+                    <select onChange={handleChange} name="queen" id="chosenQueen" value={queenChoice}>
                         <option value="" default disabled>Pick a Winning Queen</option>
                         <option value="Tyra Sanchez">Tyra Sanchez</option>
                         <option value="Chad Michaels">Chad Michaels</option>
@@ -60,20 +66,8 @@ const WinnerSearch = (props) => {
                         <option value="Jaida Essence Hall">Jaida Essence Hall</option>
                     </select>
                     <button className="button">Inspire me Queen!</button>
-
                 </form>
             </div>
-            {
-                queen.map((queen) => {
-                    return (
-                        <div className="queen" key={queen.id}>
-                        <h3>{queen.name}</h3>
-                        <img src={queen.image_url} alt="photo of" {...queen.name}/>
-                        <p>"{queen.quote}"</p>
-                        </div>
-                    );
-                })
-            }
         </section>
 
 

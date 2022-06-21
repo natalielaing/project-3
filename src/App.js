@@ -1,18 +1,22 @@
 import './App.css';
 import {useState} from "react";
 import WinnerSearch from "./components/WinnerSearch";
+import RandomSearch from "./components/RandomSearch";
+import DisplayResults from "./components/DisplayResults";
 
 
 function App() {
 
   const [queen, setQueen] = useState ([]);
-  const [queenChoice, setQueenChoice] = useState('');
+  const [randomQueen, setRandomQueen] = useState([]);
+  const [buttonClick, setButtonClick] = useState(false);
+  // const [queenChoice, setQueenChoice] = useState('');
 
-  const handleSubmit = function(event, selectedQueen) {
-    event.preventDefault();
-    // clearRandom();
-    setQueenChoice(selectedQueen);
-  }
+  // const handleSubmit = function(event, selectedQueen) {
+  //   event.preventDefault();
+  //   // clearRandom();
+  //   setQueenChoice(selectedQueen);
+  // }
 
 
 
@@ -22,15 +26,37 @@ function App() {
         <h2>Looking for some inspiration?</h2>
         <h3>Prepare to be...</h3>
         <h1>Yassified</h1>
-        <WinnerSearch
+        <div className="flexContainer">
+            <div className="winnerSearch">
+              <WinnerSearch
+              queen={queen}
+              setQueen={setQueen}
+              randomQueen={randomQueen}
+              setRandomQueen={setRandomQueen}
+              buttonClick={buttonClick}
+              setButtonClick={setButtonClick}
+              />
+            </div>
+            <div className="or">
+              <h4>OR</h4>
+            </div>
+            <div className="randomSearch">
+              <RandomSearch
+              queen={queen}
+              setQueen={setQueen}
+              randomQueen={randomQueen}
+              setRandomQueen={setRandomQueen}
+              buttonClick={buttonClick}
+              setButtonClick={setButtonClick}
+              />
+              </div>
+          </div>
+        <DisplayResults
         queen={queen}
-        setQueen={setQueen}
-        queenChoice={queenChoice}
-        setQueenChoice={setQueenChoice}
-        handleSubmit={handleSubmit}
+        randomQueen={randomQueen}
+        buttonClick={buttonClick}
         />
-        {/* <RandomSearch/>
-        <Makeup/> */}
+        {/* <Makeup/> */}
       </div>
     </div>
   );
