@@ -46,7 +46,6 @@ const WinnerSearch = (props) => {
             .then(axios.spread((queenData, makeupData) => {
                 props.setQueen(queenData.data);
                 props.setLipstick(makeupData.data[random]);
-                console.log(makeupData.data)
             }))
             .catch(err => {
                 const errorHandle = alert("Looks like there was a bit of a mixup... YASS you should definitely try searching again!");

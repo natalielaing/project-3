@@ -1,6 +1,6 @@
 function DisplayRandom (props) {
     const buttonClicked = props.buttonClick;
-    if (buttonClicked && props.randomQueen[""]) {
+    if (buttonClicked) {
     return (
         <section className="wrapper">
             <div className="queen">

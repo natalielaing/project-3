@@ -8,7 +8,6 @@ const RandomSearch = (props) => {
     }
 
     const getQueen = (e) => {
-
     {clearWinner()};
 
     props.setButtonClick(true);
@@ -35,7 +34,6 @@ const RandomSearch = (props) => {
         .then(axios.spread((queenData, makeupData) => {
         props.setRandomQueen(queenData.data);
         props.setLipstick(makeupData.data[random]);
-        console.log(queenData.data);
             }))
         .catch(err => {
             const errorHandle = alert("Looks like there was a bit of a mixup... YASS you should definitely try searching again!");
