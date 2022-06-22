@@ -30,13 +30,9 @@ function App() {
         <div className="flexContainer">
             <div className="winnerSearch">
               <WinnerSearch
-              queen={queen}
               setQueen={setQueen}
-              randomQueen={randomQueen}
               setRandomQueen={setRandomQueen}
-              buttonClick={buttonClick}
               setButtonClick={setButtonClick}
-              lipstick={lipstick}
               setLipstick={setLipstick}
               />
             </div>

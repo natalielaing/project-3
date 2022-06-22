@@ -7,7 +7,7 @@ function DisplayRandom (props) {
 
                 <div className="queenLeft">
                     <div className="imgContainer">
-                    {props.buttonClick && <img src={props.randomQueen.image_url} alt={`photo of ${props.randomQueen.name}`}/>}
+                    {props.buttonClick && <img src={props.randomQueen.image_url} alt={`${props.randomQueen.name}`}/>}
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@ function DisplayRandom (props) {
                 <a className="makeupResult" href={props.lipstick.product_link}>
                     {props.buttonClick && <h5>{`${props.lipstick.name} by ${props.lipstick.brand}`}</h5>}
                 <div className="makeupImage">
-                    {props.buttonClick && <img src={props.lipstick.api_featured_image} alt={`photo of ${props.lipstick.name}`}/>}
+                    {props.buttonClick && <img src={props.lipstick.api_featured_image} alt={`${props.lipstick.name}`}/>}
                 </div>
                 </a>
                 </div>

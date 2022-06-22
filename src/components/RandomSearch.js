@@ -8,7 +8,7 @@ const RandomSearch = (props) => {
     }
 
     const getQueen = (e) => {
-    {clearWinner()};
+    clearWinner();
 
     props.setButtonClick(true);
 

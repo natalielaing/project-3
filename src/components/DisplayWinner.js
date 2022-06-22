@@ -8,7 +8,7 @@ function DisplayWinner (props) {
                         <div className="queen" key={queen.id}>
                             <div className="queenLeft">
                                 <div className="imgContainer">
-                                    <img src={queen.image_url} alt={`photo of ${queen.name}`}/>
+                                    <img src={queen.image_url} alt={`${queen.name}`}/>
                                 </div>
                             </div>
 
@@ -24,7 +24,7 @@ function DisplayWinner (props) {
                                 <a className="makeupResult" href={props.lipstick.product_link}>
                                 <h5>{`${props.lipstick.name} by ${props.lipstick.brand}`}</h5>
                                 <div className="makeupImage">
-                                <img src={props.lipstick.api_featured_image} alt={`photo of ${props.lipstick.name}`}/>
+                                <img src={props.lipstick.api_featured_image} alt={`${props.lipstick.name}`}/>
                                 </div>
                                 </a>
                             </div>

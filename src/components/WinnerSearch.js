@@ -1,6 +1,5 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
-import '../App.css';
 
 const WinnerSearch = (props) => {
 
@@ -25,7 +24,7 @@ const WinnerSearch = (props) => {
     useEffect( () => {
 
         const random = Math.floor(Math.random() * 154);
-        if (queenSearch && queenSearch != "placeholder") {
+        if (queenSearch && queenSearch !== "placeholder") {
             axios.all([
                 axios({
                     baseURL: "http://www.nokeynoshade.party/api/queens",
