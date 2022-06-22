@@ -17,6 +17,10 @@ const WinnerSearch = (props) => {
 
     const handleSubmit = function(event, selectedQueen) {
         event.preventDefault();
+        window.scrollBy({
+            top: 900,
+            behavior: 'smooth'
+          });
         setQueenSearch(selectedQueen);
         clearRandom();
       }

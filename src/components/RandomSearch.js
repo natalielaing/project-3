@@ -8,6 +8,10 @@ const RandomSearch = (props) => {
     }
 
     const getQueen = (e) => {
+    window.scrollBy({
+            top: 700,
+            behavior: 'smooth'
+          });
     clearWinner();
 
     props.setButtonClick(true);
@@ -27,7 +31,7 @@ const RandomSearch = (props) => {
                 method: "GET",
                 params: {
                 product_type: "lipstick",
-                limit: 1,
+                limit: 1
                 }})
 
             ])
@@ -36,7 +40,7 @@ const RandomSearch = (props) => {
         props.setLipstick(makeupData.data[random]);
             }))
         .catch(err => {
-            const errorHandle = alert("Looks like there was a bit of a mixup... YASS you should definitely try searching again!");
+            const errorHandle = alert(`Hmmm...try clicking again. Good luck and don't mess it up.`);
             errorHandle();
             props.setButtonClick(false);
         })

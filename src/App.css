@@ -18,7 +18,7 @@ a {
 }
 
 footer p{
-  padding: 0;
+  padding: 10px;
   margin: 0;
   text-align: center;
   background: #65FAA2;
@@ -26,7 +26,7 @@ footer p{
 
 .main {
   background-image: linear-gradient(violet, pink);
-  min-height: 100vh;
+  min-height: 130vh;
   padding-bottom: 30px;
 }
 
@@ -77,18 +77,21 @@ h2 span {
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: scale-down;
 }
 
 .imgContainer {
   width: 400px;
-  height: 450px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10%;
-  border: black solid 2px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
 }
 
 .queen {
@@ -171,6 +174,7 @@ img {
   margin: auto 0;
 }
 
+
 .makeupResult {
   display: flex;
   height: fit-content;
@@ -182,7 +186,7 @@ img {
 
 .makeupResult:hover {
   cursor: pointer;
-  background: magenta;
+  background: #65faa39c;
 }
 
 .makeupImage {
@@ -263,7 +267,7 @@ select {
 }
 
 select:hover {
-  background: yellow;
+  box-shadow: 3px 3px yellow;
 }
 
 
