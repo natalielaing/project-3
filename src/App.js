@@ -15,6 +15,7 @@ function App() {
 
 
   return (
+    <>
     <div className="main">
       <div className="wrapper">
         <header>
@@ -69,6 +70,10 @@ function App() {
         />
       </div>
     </div>
+    <footer>
+      <p>Created at Juno College of Technology 🦑</p>
+    </footer>
+    </>
     
   );
 }

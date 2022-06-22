@@ -48,6 +48,10 @@ const WinnerSearch = (props) => {
                 props.setLipstick(makeupData.data[random]);
                 console.log(makeupData.data)
             }))
+            .catch(err => {
+                const errorHandle = alert("Looks like there was a bit of a mixup... YASS you should definitely try searching again!");
+                errorHandle();
+            })
         }
               }, [queenSearch]);
         
