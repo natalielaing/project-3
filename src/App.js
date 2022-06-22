@@ -67,7 +67,7 @@ function App() {
     </div>
 </div>
     <footer>
-      <p>Created at Juno College of Technology 🌈</p>
+      <p>Created by Natalie Laing at Juno College of Technology 💕</p>
     </footer>
     </>
   );
