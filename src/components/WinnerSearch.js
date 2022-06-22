@@ -27,14 +27,14 @@ const WinnerSearch = (props) => {
         if (queenSearch && queenSearch !== "placeholder") {
             axios.all([
                 axios({
-                    baseURL: "http://www.nokeynoshade.party/api/queens",
+                    baseURL: "https://www.nokeynoshade.party/api/queens",
                     method: "GET",
                     params: {
                     name: queenSearch,
                     limit: 1
                     }}),
                 axios({
-                        baseURL: "http://makeup-api.herokuapp.com/api/v1/products.json",
+                        baseURL: "https://makeup-api.herokuapp.com/api/v1/products.json",
                         method: "GET",
                         params: {
                         product_type: "lipstick",

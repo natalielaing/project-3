@@ -17,13 +17,13 @@ const RandomSearch = (props) => {
 
     axios.all([
         axios({
-            baseURL: `http://www.nokeynoshade.party/api/queens/${id}`,
+            baseURL: `https://www.nokeynoshade.party/api/queens/${id}`,
             method: "GET",
             params: {
             limit: 1
             }}),
         axios({
-                baseURL: "http://makeup-api.herokuapp.com/api/v1/products.json",
+                baseURL: "https://makeup-api.herokuapp.com/api/v1/products.json",
                 method: "GET",
                 params: {
                 product_type: "lipstick",
