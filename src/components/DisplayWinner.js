@@ -18,7 +18,7 @@ function DisplayWinner (props) {
 
 
 
-                                <h4>Wanna feel better?</h4>
+                                <h4>You wanna feel better?</h4>
                                 <h4>{`${queen.name} suggests trying:`}</h4>
 
                                 <a className="makeupResult" href={props.lipstick.product_link}>

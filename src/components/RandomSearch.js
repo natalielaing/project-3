@@ -38,6 +38,7 @@ const RandomSearch = (props) => {
         .catch(err => {
             const errorHandle = alert("Looks like there was a bit of a mixup... YASS you should definitely try searching again!");
             errorHandle();
+            props.setButtonClick(false);
         })
    
 
