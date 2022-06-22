@@ -21,7 +21,7 @@ function App() {
         <header>
             <div className="flexTitle">
                 <div className="ruContainer">
-                      <img src={require('./assets/rupaul1.png')}  alt={'photo of rupaul'}/>
+                      <img src={require('./assets/rupaul1.png')}  alt='rupaul laying down'/>
                 </div>
                 <h1>Yassified</h1>
             </div>
