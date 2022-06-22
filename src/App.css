@@ -19,7 +19,7 @@ a {
 
 .main {
   background-image: linear-gradient(violet, pink);
-  min-height: 170vh;
+  min-height: 100vh;
 }
 
 .wrapper {
@@ -325,6 +325,10 @@ select:hover {
     flex-direction: column;
   }
 
+  h4 {
+    width: auto;
+  }
+
   select {
     margin: 20px auto;
     margin-bottom: 20px;
@@ -372,9 +376,6 @@ select:hover {
     font-size: 4rem;
   }
 
-  h4 {
-    width: auto;
-  }
 
   .makeupImage {
     margin: auto;
@@ -386,16 +387,51 @@ select:hover {
     flex-direction: column;
     align-items: center;
   }
+
+  .makeupResult h5 {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 560px) {
 
+
+  .queenRight {
+    margin-top: 50px;
+  }
+
   .queenRight p::before {
-    display: none;
+    font-size: 2rem;
+    top: -20px;
+    left: -20px;
   }
 
   .queenRight p::after {
-    display: none;
+    font-size: 2rem;
+    bottom: -20px;
+    right: -20px;
   }
+  
 
+  .queenRight p {
+    width:auto;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.2rem;
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .imgContainer {
+    width: 250px;
+    height: 350px;
+  }
 }

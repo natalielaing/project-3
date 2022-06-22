@@ -2,6 +2,7 @@ function DisplayRandom (props) {
     const buttonClicked = props.buttonClick;
     if (buttonClicked) {
     return (
+        <>
         <section className="wrapper">
             <div className="queen">
 
@@ -31,6 +32,10 @@ function DisplayRandom (props) {
 
             </div>
         </section>
+        <footer>
+            <p>Created at Juno College of Technology 🦑</p>
+        </footer>
+        </>
         )
     }
 }
